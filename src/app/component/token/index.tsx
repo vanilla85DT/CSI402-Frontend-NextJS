@@ -15,10 +15,10 @@ export default function TempAccessModal({ onClose, onConfirm }: TempAccessModalP
         
         <div className="text-center mb-4">
           <p className="text-pink-800 mb-2">
-            Temporary access will be granted for 30 minutes.
+            จะมีการให้เข้าใช้ชั่วคราวเป็นเวลา 30 นาที
           </p>
           <p className="text-red-500 font-semibold">
-            Warning: Access will automatically expire
+            คำเตือน: การเข้าถึงจะหมดอายุโดยอัตโนมัติ
           </p>
         </div>
         
