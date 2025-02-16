@@ -1,29 +1,35 @@
-// 65076751 Athitaya Chaisiriwattanasai
-ipeline {
+pipeline {
     agent any
 
     stages {
         stage('Clone') {
             steps {
-                print "65076751 Athitaya Chaisiriwattanasai"
+                checkout([
+        $class: 'GitSCM',
+        branches: [[name: '*/main'], [name: '*/main'], …[name: '*/main']],
+        userRemoteConfigs: [ [
+        credentialsId: 'supervanilla85',
+        url: 'https://github.com/vanilla85DT/CSI402-Frontend-NextJS.git'
+                ]]
+                ])
             }
         }
 
         stage('Build') {
             steps {
-                print "CSI403"
+                print "Athitaya C"
             }
         }
 
         stage('Deploy Image') {
             steps {
-                print "Deploy Image"
+                print "deploy image"
             }
         }
 
         stage('Testing') {
             steps {
-                print "Testing"
+                print "testing"
             }
         }
     }
