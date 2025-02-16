@@ -2,34 +2,41 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage('Checkout') {
             steps {
+                echo "Clone Code the project From Git"
                 checkout([
-        $class: 'GitSCM',
-        branches: [[name: '*/main'], [name: '*/main'], …[name: '*/main']],
-        userRemoteConfigs: [ [
-        credentialsId: 'supervanilla85',
-        url: 'https://github.com/vanilla85DT/CSI402-Frontend-NextJS.git'
-                ]]
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']], 
+                    userRemoteConfigs: [[
+                        credentialsId: 'supervanilla85',
+                        url: 'https://github.com/vanilla85DT/CSI402-Frontend-NextJS.git' 
+                    ]]
                 ])
             }
         }
 
         stage('Build') {
             steps {
-                print "Athitaya C"
+                echo "Building the project..."
             }
         }
 
-        stage('Deploy Image') {
+        stage('Unit Tests') {
             steps {
-                print "deploy image"
+                echo "Running tests..."
             }
         }
 
-        stage('Testing') {
+        stage('Deploy') {
             steps {
-                print "testing"
+                echo "Deploying the application..."
+            }
+        }
+
+        stage('Deployment test') {
+            steps {
+                echo "Running tests..."
             }
         }
     }
